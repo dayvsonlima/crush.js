@@ -1,0 +1,7 @@
+{
+  "GET /users":     "users#index",
+  "PATCH  /users":  "users#update",
+  "PUT  /users":    "users#update",
+  "DELETE  /users": "users#destroy",
+  "POST /users":    "users#create"
+}
