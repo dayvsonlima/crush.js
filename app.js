@@ -1,5 +1,5 @@
 import http from 'http'
-import Dispatcher from './crush/dispatcher'
+import Dispatcher from '@/crush/dispatcher'
 
 http.createServer((request, response) => {
   const dispatcher = new Dispatcher(request, response)
