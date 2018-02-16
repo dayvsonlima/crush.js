@@ -4,6 +4,12 @@ import Router from '@/crush/router'
 describe('#router', () => {
   const { routes } = new Router
 
+  context('#root', () => {
+    it('has a root path', () => {
+      expect(routes['GET /']).to.eq('home#index')
+    })
+  })
+
   context('when receive a resources', () => {
     it('has a new route GET', () => {
       expect(routes['GET /users/new']).to.eq('users#new')
