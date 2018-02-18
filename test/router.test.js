@@ -4,7 +4,7 @@ import Router from '@/crush/router'
 describe('#router', () => {
   const { routes } = new Router
 
-  context('#root', () => {
+  context('root', () => {
     it('has a root path', () => {
       expect(routes['GET /']).to.eq('home#index')
     })

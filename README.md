@@ -8,13 +8,17 @@ A MVC web application Node framework OO Based using Babel
 
 ```javascript
 // app/routes.js
-this.resources('photos')
-this.resources('books')
-this.resources('videos')
+export default function Routes() {
+  this.root('photos#index')
 
-this.resources('magazines', () => {
-  this.resources('ads')
-})
+  this.resources('photos')
+  this.resources('books')
+  this.resources('videos')
+
+  this.resources('magazines', () => {
+    this.resources('ads')
+  })
+}
 ```
 
 ## Friendly controller syntax
