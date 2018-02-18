@@ -7,6 +7,7 @@ A MVC web application Node framework OO Based using Babel
 ## Router system
 
 ```javascript
+// app/routes.js
 this.resources('photos')
 this.resources('books')
 this.resources('videos')
@@ -19,6 +20,7 @@ this.resources('magazines', () => {
 ## Friendly controller syntax
 
 ```javascript
+// app/controllers/photos.js
 import { Controller } from 'crush'
 
 class Photos extends Controller {
@@ -33,11 +35,11 @@ export default Photos
 ## Create APIs easily
 
 ```javascript
+// app/views/products/show.json
 export default jbuilder.encode(function(json) {
   json.set('product', function(json) {
-    json.extract(product, 'price', 'name', 'weight');
+    json.extract(product, 'price', 'name', 'weight')
   })
 })
-// Result
-// {"product":{"price":12.99,"name":"Foo","weight":"1kg"}}
+// output: {"product":{"price":12.99,"name":"Foo","weight":"1kg"}}
 ```
