@@ -1,9 +1,12 @@
 import http from 'http'
 import Dispatcher from '@/crush/dispatcher'
+import Router from '@/crush/router'
 
 http.createServer((request, response) => {
-  const dispatcher = new Dispatcher(request, response)
-  dispatcher.resolve({'Content-Type': 'application/json'})
+  const router = new Router
+  const dispatcher = new Dispatcher(request, response, router.routes)
+
+  dispatcher.resolve()
 
 }).listen(1337, '127.0.0.1')
 

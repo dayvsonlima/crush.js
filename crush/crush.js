@@ -1,5 +1,5 @@
-import Controller from './controller/index'
-import Dispatcher from './dispatcher'
+import Controller from '@/crush/controller/index'
+import Dispatcher from '@/crush/dispatcher'
 
 export default {
   Controller,
