@@ -33,9 +33,9 @@ export default Photos
 ## Create APIs easily
 
 ```javascript
-// app/views/photos/show.json
-export default jbuilder.encode(function(json) {
-  json.set('photo', function(json) {
+// app/views/photos/show.js
+export default jbuilder.encode((json) => {
+  json.set('photo', (json) => {
     json.extract(photo, 'id', 'name', 'url')
   })
 })
