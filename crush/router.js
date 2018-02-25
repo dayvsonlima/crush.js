@@ -19,7 +19,7 @@ class Router {
     this.init()
     this.buildRoutes(resource_name)
     this.addCurrentResource(`${resource_name}/:id`)
-    this.buildNestedResources(arguments)
+    this.buildNestedResources([...arguments])
     this.removeCurrentResource(`${resource_name}/:id`)
   }
 
@@ -43,7 +43,7 @@ class Router {
   }
 
   buildNestedResources(args) {
-    Array.from(args).forEach((argument) => {
+    args.forEach((argument) => {
       if(typeof argument == 'function') { argument() }
     })
   }

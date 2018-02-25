@@ -41,8 +41,6 @@ describe('#router', () => {
   })
 
   context('when receive a nested resources', () => {
-    console.log(routes)
-    
     it('has a new nested route GET', () => {
       expect(routes['GET /users/:id/plans/new']).to.eq('plans#new')
     })
